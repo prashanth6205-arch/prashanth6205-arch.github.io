@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A. Prashanth Chary | Cybersecurity Portfolio</title>
+
+    <meta name="description"
+          content="A. Prashanth Chary - Computer Science student specializing in Cybersecurity.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        /* =========================
+           BASIC SETTINGS
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #05070d;
+            --bg2: #090d16;
+            --card: #0d121d;
+            --border: #1d2939;
+            --text: #f4f7fb;
+            --muted: #9ca9ba;
+            --green: #00ff9d;
+            --blue: #00b7ff;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(5, 7, 13, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .navbar {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--green);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: #c8d0dc;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--green);
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 100px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title p {
+            color: var(--green);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+        }
+
+        /* =========================
+           HOME
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 120px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(0, 255, 157, 0.08);
+            filter: blur(100px);
+            border-radius: 50%;
+            top: 10%;
+            right: -150px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+        }
+
+        .small-text {
+            color: var(--green);
+            font-family: "JetBrains Mono", monospace;
+            letter-spacing: 3px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 82px);
+            line-height: 1.05;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: var(--green);
+        }
+
+        .hero h2 {
+            font-size: clamp(20px, 3vw, 30px);
+            color: #c7d0dc;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .hero-description {
+            max-width: 700px;
+            color: var(--muted);
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .terminal-line {
+            font-family: "JetBrains Mono", monospace;
+            color: var(--green);
+            margin-bottom: 25px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 22px;
+            border-radius: 7px;
+            border: 1px solid var(--green);
+            transition: 0.3s;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--green);
+            color: #04100b;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 25px rgba(0,255,157,0.35);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            color: var(--green);
+        }
+
+        .btn-outline:hover {
+            background: rgba(0,255,157,0.08);
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .about-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 30px;
+        }
+
+        .about-card .code-line {
+            font-family: "JetBrains Mono", monospace;
+            margin: 10px 0;
+            color: #d7e0eb;
+        }
+
+        .green {
+            color: var(--green);
+        }
+
+        .blue {
+            color: var(--blue);
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--green);
+            box-shadow: 0 8px 30px rgba(0,255,157,0.08);
+        }
+
+        .skill-card i {
+            font-size: 30px;
+            color: var(--green);
+            margin-bottom: 12px;
+        }
+
+        .skill-card h3 {
+            font-size: 16px;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--green);
+        }
+
+        .project-icon {
+            font-size: 35px;
+            color: var(--green);
+            margin-bottom: 18px;
+        }
+
+        .project-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 4px;
+            border-radius: 5px;
+            background: rgba(0,255,157,0.08);
+            color: var(--green);
+            font-size: 12px;
+            font-family: "JetBrains Mono", monospace;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--green);
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .education-card h3 {
+            font-size: 23px;
+            margin-bottom: 8px;
+        }
+
+        .education-card .college {
+            color: var(--green);
+            margin-bottom: 12px;
+        }
+
+        .education-card p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           CERTIFICATES
+        ========================= */
+
+        .coming-soon {
+            text-align: center;
+            background: var(--card);
+            border: 1px dashed var(--border);
+            border-radius: 12px;
+            padding: 45px 20px;
+            color: var(--muted);
+        }
+
+        .coming-soon i {
+            font-size: 35px;
+            color: var(--green);
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-container {
+            text-align: center;
+        }
+
+        .contact-container > p {
+            color: var(--muted);
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            padding: 13px 20px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: #d6dee8;
+            transition: 0.3s;
+        }
+
+        .contact-item:hover {
+            border-color: var(--green);
+            color: var(--green);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        footer span {
+            color: var(--green);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                width: 220px;
+                background: #0b1019;
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 20px;
+                display: none;
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            section {
+                padding: 80px 18px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                <span>&lt;</span>Prashanth<span>/&gt;</span>
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+
+                <li>
+                    <a href="#certificates">Certificates</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+            <div class="menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-text">
+                HELLO, I'M
+            </p>
+
+            <h1>
+                A. Prashanth <span>Chary</span>
+            </h1>
+
+            <h2>
+                Computer Science Student
+                <br>
+                <span class="green">Cybersecurity Enthusiast</span>
+            </h2>
+
+            <p class="terminal-line">
+                &gt; learning.security() // building.projects()
+            </p>
+
+            <p class="hero-description">
+
+                I'm a third-year Computer Science student specializing
+                in Cybersecurity at S.V.I.T. I'm enthusiastic about
+                cybersecurity, technology, and solving real-world
+                problems through innovative solutions.
+
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-code"></i>
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    <i class="fas fa-envelope"></i>
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <p>01. ABOUT ME</p>
+
+            <h2>Who I Am</h2>
+
+        </div>
+
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+                    Hello! I'm <strong>A. Prashanth Chary</strong>,
+                    a third-year Computer Science student specializing
+                    in Cybersecurity.
+                </p>
+
+                <p>
+                    I am an enthusiastic and friendly person who is
+                    interested in cybersecurity and emerging technologies.
+                    I enjoy learning how systems work, understanding
+                    security problems, and exploring ways to make
+                    digital environments safer.
+                </p>
+
+                <p>
+                    My goal is to continuously improve my technical
+                    skills and work on practical projects that solve
+                    real-world cybersecurity problems.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <div class="code-line">
+                    <span class="green">name</span> =
+                    "A. Prashanth Chary";
+                </div>
+
+                <div class="code-line">
+                    <span class="green">field</span> =
+                    "Cybersecurity";
+                </div>
+
+                <div class="code-line">
+                    <span class="green">year</span> =
+                    "3rd Year";
+                </div>
+
+                <div class="code-line">
+                    <span class="green">personality</span> =
+                    "Enthusiastic & Friendly";
+                </div>
+
+                <div class="code-line">
+                    <span class="green">goal</span> =
+                    "Build & Secure";
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+        <div class="section-title">
+
+            <p>02. MY SKILLS</p>
+
+            <h2>Technical Skills</h2>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <i class="fa-solid fa-c"></i>
+                <h3>C</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-python"></i>
+                <h3>Python</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-html5"></i>
+                <h3>HTML</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-java"></i>
+                <h3>Java</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-linux"></i>
+                <h3>Linux</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Cybersecurity</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-terminal"></i>
+                <h3>Kali Linux</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-database"></i>
+                <h3>SQL</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects">
+
+        <div class="section-title">
+
+            <p>03. PROJECTS</p>
+
+            <h2>What I've Built</h2>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-qrcode"></i>
+                </div>
+
+                <h3>
+                    SafeScan
+                </h3>
+
+                <p>
+
+                    An AI-assisted fake QR code and scam website
+                    detection system designed to help users identify
+                    potentially suspicious links and digital scams.
+
+                </p>
+
+                <span class="tag">Cybersecurity</span>
+                <span class="tag">AI Assisted</span>
+                <span class="tag">QR Detection</span>
+                <span class="tag">Web Security</span>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+
+                <h3>
+                    More Projects Coming Soon
+                </h3>
+
+                <p>
+
+                    Currently learning and developing more practical
+                    cybersecurity projects. New projects will be
+                    added here as they are completed.
+
+                </p>
+
+                <span class="tag">Learning</span>
+                <span class="tag">Building</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section id="education">
+
+        <div class="section-title">
+
+            <p>04. EDUCATION</p>
+
+            <h2>My Education</h2>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <h3>
+                Bachelor of Technology (B.Tech)
+            </h3>
+
+            <p class="college">
+                S.V.I.T — Swami Vivekananda Institute of Technology
+            </p>
+
+            <p>
+                Computer Science Engineering
+                <br>
+                Specialization: Cybersecurity
+                <br>
+                Current Year: 3rd Year
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CERTIFICATES
+    ========================== -->
+
+    <section id="certificates">
+
+        <div class="section-title">
+
+            <p>05. CERTIFICATES</p>
+
+            <h2>Certifications</h2>
+
+        </div>
+
+
+        <div class="coming-soon">
+
+            <i class="fa-solid fa-certificate"></i>
+
+            <h3>Certificates Coming Soon</h3>
+
+            <p>
+                My certifications and achievements will be added here.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <p>06. CONTACT</p>
+
+            <h2>Let's Connect</h2>
+
+        </div>
+
+
+        <div class="contact-container">
+
+            <p>
+
+                Interested in cybersecurity, technology, or
+                collaboration? Feel free to connect with me.
+
+            </p>
+
+
+            <div class="contact-links">
+
+                <a class="contact-item"
+                   href="mailto:prashanthchary2006@gmail.com">
+
+                    <i class="fas fa-envelope"></i>
+                    Email
+
+                </a>
+
+
+                <a class="contact-item"
+                   href="https://www.linkedin.com/in/prashanth-chary-1a1092253/"
+                   target="_blank">
+
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 <span>A. Prashanth Chary</span>.
+            Built with curiosity & code.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        function toggleMenu() {
+
+            const menu = document.querySelector(".nav-links");
+
+            menu.classList.toggle("active");
+
+        }
+
+
+        // Close mobile menu after clicking a link
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                document.querySelector(".nav-links")
+                    .classList.remove("active");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
